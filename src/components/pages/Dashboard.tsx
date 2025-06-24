@@ -48,13 +48,13 @@ export default function Dashboard() {
     const fetchData = async () => {
       try {
         const [agentRes, taskRes, metricRes, statusRes, auditRes, vulnRes, malwareRes] = await Promise.all([
-          fetch("http://127.0.0.1:8000/agents"),
-          fetch("http://127.0.0.1:8000/tasks"),
-          fetch("http://127.0.0.1:8000/task-metrics"),
-          fetch("http://127.0.0.1:8000/agent-status"),
-          fetch("http://127.0.0.1:8000/audit-logs"),
-          fetch("http://127.0.0.1:8000/vulnerabilities/agent-1"),
-          fetch("http://127.0.0.1:8000/malware-report/agent-1")
+          fetch("https://agentops-backend-production.up.railway.app/agents"),
+          fetch("https://agentops-backend-production.up.railway.app/tasks"),
+          fetch("https://agentops-backend-production.up.railway.app/task-metrics"),
+          fetch("https://agentops-backend-production.up.railway.app/agent-status"),
+          fetch("https://agentops-backend-production.up.railway.app/audit-logs"),
+          fetch("https://agentops-backend-production.up.railway.app/vulnerabilities/agent-1"),
+          fetch("https://agentops-backend-production.up.railway.app/malware-report/agent-1")
         ])
 
         const agents = await agentRes.json()
@@ -114,7 +114,7 @@ export default function Dashboard() {
   const handleGenAISubmit = async () => {
     setChatResponse("⏳ Thinking...")
     try {
-      const res = await fetch("http://127.0.0.1:8000/genai-suggest-command", {
+      const res = await fetch("https://agentops-backend-production.up.railway.app/genai-suggest-command", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt: genaiMessage })
@@ -354,13 +354,13 @@ export default function Dashboard() {
 //     const fetchData = async () => {
 //       try {
 //         const [agentRes, taskRes, metricRes, statusRes, auditRes, vulnRes, malwareRes] = await Promise.all([
-//           fetch("http://127.0.0.1:8000/agents"),
-//           fetch("http://127.0.0.1:8000/tasks"),
-//           fetch("http://127.0.0.1:8000/task-metrics"),
-//           fetch("http://127.0.0.1:8000/agent-status"),
-//           fetch("http://127.0.0.1:8000/audit-logs"),
-//           fetch("http://127.0.0.1:8000/vulnerabilities/agent-1"),
-//           fetch("http://127.0.0.1:8000/malware-report/agent-1")
+//           fetch("https://agentops-backend-production.up.railway.app/agents"),
+//           fetch("https://agentops-backend-production.up.railway.app/tasks"),
+//           fetch("https://agentops-backend-production.up.railway.app/task-metrics"),
+//           fetch("https://agentops-backend-production.up.railway.app/agent-status"),
+//           fetch("https://agentops-backend-production.up.railway.app/audit-logs"),
+//           fetch("https://agentops-backend-production.up.railway.app/vulnerabilities/agent-1"),
+//           fetch("https://agentops-backend-production.up.railway.app/malware-report/agent-1")
 //         ])
 
 //         const agents = await agentRes.json()
@@ -424,7 +424,7 @@ export default function Dashboard() {
 //   const handleGenAISubmit = async () => {
 //     setChatResponse("⏳ Thinking...")
 //     try {
-//       const res = await fetch("http://127.0.0.1:8000/genai-suggest-command", {
+//       const res = await fetch("https://agentops-backend-production.up.railway.app/genai-suggest-command", {
 //         method: "POST",
 //         headers: { "Content-Type": "application/json" },
 //         body: JSON.stringify({ prompt: genaiMessage })
@@ -531,13 +531,13 @@ export default function Dashboard() {
 //     const fetchData = async () => {
 //       try {
 //         const [agentRes, taskRes, metricRes, statusRes, auditRes, vulnRes, malwareRes] = await Promise.all([
-//           fetch("http://127.0.0.1:8000/agents"),
-//           fetch("http://127.0.0.1:8000/tasks"),
-//           fetch("http://127.0.0.1:8000/task-metrics"),
-//           fetch("http://127.0.0.1:8000/agent-status"),
-//           fetch("http://127.0.0.1:8000/audit-logs"),
-//           fetch("http://127.0.0.1:8000/vulnerabilities/agent-1"),
-//           fetch("http://127.0.0.1:8000/malware-report/agent-1")
+//           fetch("https://agentops-backend-production.up.railway.app/agents"),
+//           fetch("https://agentops-backend-production.up.railway.app/tasks"),
+//           fetch("https://agentops-backend-production.up.railway.app/task-metrics"),
+//           fetch("https://agentops-backend-production.up.railway.app/agent-status"),
+//           fetch("https://agentops-backend-production.up.railway.app/audit-logs"),
+//           fetch("https://agentops-backend-production.up.railway.app/vulnerabilities/agent-1"),
+//           fetch("https://agentops-backend-production.up.railway.app/malware-report/agent-1")
 //         ])
 
 //         const agents = await agentRes.json()
@@ -603,7 +603,7 @@ export default function Dashboard() {
 //   const handleGenAISubmit = async () => {
 //     setChatResponse("⏳ Thinking...")
 //     try {
-//       const res = await fetch("http://127.0.0.1:8000/genai-suggest-command", {
+//       const res = await fetch("https://agentops-backend-production.up.railway.app/genai-suggest-command", {
 //         method: "POST",
 //         headers: { "Content-Type": "application/json" },
 //         body: JSON.stringify({ prompt: genaiMessage })

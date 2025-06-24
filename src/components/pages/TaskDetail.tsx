@@ -26,7 +26,7 @@ export default function TaskDetail() {
   useEffect(() => {
     const fetchTask = async () => {
       try {
-        const res = await fetch(`http://127.0.0.1:8000/task-result/${taskId}`)
+        const res = await fetch(`https://agentops-backend-production.up.railway.app/task-result/${taskId}`)
         const data = await res.json()
         console.log(data.task)
         setTask(data.task)

@@ -42,7 +42,7 @@ export default function TaskList() {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const res = await fetch("http://127.0.0.1:8000/tasks")
+        const res = await fetch("https://agentops-backend-production.up.railway.app/tasks")
         const data = await res.json()
         setTasks(data)
       } catch (error) {
