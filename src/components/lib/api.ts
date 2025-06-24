@@ -12,7 +12,7 @@ export interface Agent {
 }
 
 export async function fetchAgents(): Promise<Agent[]> {
-  const response = await fetch("http://localhost:8000/agents");
+  const response = await fetch("https://agentops-backend-production.up.railway.app/agents");
   if (!response.ok) throw new Error("Failed to fetch agents");
   return await response.json();
 }

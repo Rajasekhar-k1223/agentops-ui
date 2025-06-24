@@ -21,7 +21,7 @@ export default function AgentDetail() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch(`http://localhost:8000/agent/${agentId}`)
+    fetch(`https://agentops-backend-production.up.railway.app/agent/${agentId}`)
       .then(res => res.json())
       .then(data => {
         setAgent(data)
