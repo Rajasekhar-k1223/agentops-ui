@@ -29,7 +29,7 @@ export default function AgentsPage() {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <DataTable data={agents} columns={columns} />
+        <DataTable data={agents} columns={columns} showActions={true}/>
       )}
     </div>
   );
